@@ -28,3 +28,9 @@ class ContactForm(forms.Form):
 		if not "gmail.com" in email:
 			raise forms.ValidationError("Email has to be gmail.com")
 		return email
+
+	def clean_fullname(self):
+		fullname = self.cleaned_data.get("fullname")
+		if not "Ygor" in fullname:
+			raise forms.ValidationError("Name has to be Ygor")
+		return fullname
