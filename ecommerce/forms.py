@@ -34,3 +34,8 @@ class ContactForm(forms.Form):
 		if not "Ygor" in fullname:
 			raise forms.ValidationError("Name has to be Ygor")
 		return fullname
+
+
+class LoginForm(forms.Form):
+	username = forms.CharField()
+	password = forms.CharField(widget=forms.PasswordInput)
